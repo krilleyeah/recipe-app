@@ -3,7 +3,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
-import Content from './components/Content'
+import List from './components/List'
+
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     <>
       <Navbar />
       <Sidebar />
-      <Content />
+      <List />
       <Footer />
     </>
   )
