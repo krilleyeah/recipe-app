@@ -11,13 +11,13 @@ function List() {
     });
     setRecipes(newList);
   }
+
   return (
     <div id="content">
       {recipes.map((recipe) => {
         return (
-          <div>
-            <ListItem card={recipe} />
-            <button onClick={() => deleteRecipe(recipe.id)}>Delete</button>
+          <div key={recipe.id}>
+            <ListItem card={recipe} callFunction={deleteRecipe} />
           </div>
         );
       })}
