@@ -1,12 +1,5 @@
 function ListItem(props) {
-  // Destructure the props to access callFunction
-  const { callFunction } = props;
-
-  function handleClick(id) {
-    // Call the parent function with the id
-    callFunction(id);
-  }
-
+  
   return (
     <div key={props.card.id}>
       <div>{props.card.name}</div>
@@ -15,7 +8,7 @@ function ListItem(props) {
         <img className="img" src={props.card.image} alt="" />
       </div>
       <div>{props.card.servings}</div>
-      <div><button onClick={() => handleClick(props.card.id)}>Delete</button></div>
+      <div><button onClick={() => props.callFunction(props.card.id)}>Delete</button></div>
     </div>
   );
 }
