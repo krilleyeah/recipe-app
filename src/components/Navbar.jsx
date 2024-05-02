@@ -1,6 +1,11 @@
+import {Link} from "react-router-dom"
+
 function Navbar() {
     return <div id="navbar">
-        <h1>Navbar</h1>
+        <span>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/about">About</Link> 
+        </span>
     </div>
 }
 

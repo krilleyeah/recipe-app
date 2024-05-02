@@ -2,7 +2,7 @@ import recipesList from "../assets/recipes.json";
 import { useState } from "react";
 import ListItem from "./ListItem";
 
-function List() {
+function DashboardPage() {
   const [recipes, setRecipes] = useState(recipesList);
 
   function deleteRecipe(id) {
@@ -25,4 +25,4 @@ function List() {
   );
 }
 
-export default List;
+export default DashboardPage;
