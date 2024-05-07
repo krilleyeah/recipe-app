@@ -2,6 +2,8 @@ import recipesList from "../assets/recipes.json";
 import { useState } from "react";
 import ListItem from "./ListItem";
 import FormPage from "./FormPage";
+import { Link } from "react-router-dom";
+import UpdateFormPage from "./UpdateFormPage";
 
 function DashboardPage() {
   const [recipes, setRecipes] = useState(recipesList);
@@ -13,10 +15,14 @@ function DashboardPage() {
     setRecipes(newList);
   }
 
-  function addRecipe(recipe){
+  function addRecipe(recipe) {
     const newList = [recipe, ...recipes];
-
     setRecipes(newList);
+  }
+
+  function updateRecipe(recipeObj) {
+    let updatedItems = recipes.map((recipe) => (recipe.id === recipeObj.id ? recipeObj : recipe));  
+    setRecipes(updatedItems);
   }
 
   return (
@@ -24,10 +30,17 @@ function DashboardPage() {
       {recipes.map((recipe) => {
         return (
           <div key={recipe.id}>
-            <ListItem card={recipe} callFunction={deleteRecipe} />
+            <Link to={`/details/${recipe.id}`}>
+              <div key={recipe.id}>
+                <ListItem card={recipe} />
+              </div>
+            </Link>
+            <div>
+              <UpdateFormPage details={recipe} callFunction={updateRecipe} />
+            </div>
           </div>
         );
-      } )}
+      })}
       <FormPage callFunction={addRecipe} />
     </div>
   );

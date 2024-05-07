@@ -8,7 +8,6 @@ function ListItem(props) {
         <img className="img" src={props.card.image} alt="" />
       </div>
       <div>{props.card.servings}</div>
-      <div><button onClick={() => props.callFunction(props.card.id)}>Delete</button></div>
     </div>
   );
 }

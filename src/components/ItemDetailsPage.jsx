@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom";
 import recipesList from "../assets/recipes.json";
 
-function ItemDetailsPage() {
+function ItemDetailsPage(props) {
 
     const { detailsId } = useParams();
 
     const detailInfo = recipesList.find((detail) => {
         return detail.id === detailsId.toString();
-    })
-    console.log(detailInfo);
-    console.log(recipesList);
+    });
 
     return (
-        <div>
+        <div className="detailPage">
             <p>{detailInfo.name}</p>
+            <p>Calories: {detailInfo.calories}</p>
+            <p>Servings: {detailInfo.servings}</p>
             <img src={detailInfo.image} />
         </div>
     )
