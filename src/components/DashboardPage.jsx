@@ -27,11 +27,12 @@ function DashboardPage() {
 
   return (
     <div id="content">
+      <FormPage callFunction={addRecipe} />
       {recipes.map((recipe) => {
         return (
           <div key={recipe.id}>
             <Link to={`/details/${recipe.id}`}>
-              <div key={recipe.id}>
+              <div className="recipeContainer" key={recipe.id}>
                 <ListItem card={recipe} />
               </div>
             </Link>
@@ -41,7 +42,6 @@ function DashboardPage() {
           </div>
         );
       })}
-      <FormPage callFunction={addRecipe} />
     </div>
   );
 }

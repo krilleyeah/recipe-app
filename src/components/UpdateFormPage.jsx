@@ -34,18 +34,21 @@ function UpdateFormPage(props) {
             <input name="recipeName" type="text" placeholder="Name" value={recipeName} required
               onChange={(e) => { setRecipeName(e.target.value) }} />
           </label>
+          <br/>
   
           <label>
             Calories
             <input name="calories" type="number" placeholder="Calories" value={calories}
               onChange={(e) => { setCalories(e.target.value) }} />
           </label>
+          <br/>
   
           <label>
             Image
             <input name="image" type="url" placeholder="Image" value={image} required
               onChange={(e) => { setImage(e.target.value) }} />
           </label>
+          <br/>
   
           <label>
             Servings
@@ -53,6 +56,7 @@ function UpdateFormPage(props) {
               onChange={(e) => { setServings(e.target.value) }} />
           </label>
         </div>
+        <br/>
         <div>
           <button type="submit">Update</button>
         </div>
