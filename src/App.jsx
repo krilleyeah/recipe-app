@@ -15,7 +15,6 @@ function App() {
     <>
       <Navbar />
       <Sidebar />
-
       <Routes>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />

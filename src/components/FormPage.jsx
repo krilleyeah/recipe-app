@@ -26,40 +26,38 @@ function FormPage(props) {
 
   }
   return (
+    <div><br />
     <form onSubmit={handleSubmit}>
-      <span>Add a Student</span>
+      <span id="addRecipeTitle">Add Recipe</span><br /><br />
       <div>
-        <label>
-          Recipe Name
+        <label>Recipe Name</label>
           <input name="recipeName" type="text" placeholder="Name" value={recipeName}
             onChange={(e) => { setRecipeName(e.target.value) }} />
-        </label>
+        
         <br/>
 
-        <label>
-          Calories
+        <label>Calories</label>
           <input name="calories" type="number" placeholder="Calories" value={calories}
             onChange={(e) => { setCalories(e.target.value) }} />
-        </label>
+        
         <br/>
 
-        <label>
-          Image
+        <label>Image</label>
           <input name="image" type="url" placeholder="Image" value={image}
             onChange={(e) => { setImage(e.target.value) }} />
-        </label>
+        
         <br/>
 
-        <label>
-          Servings
+        <label>Servings</label>
           <input name="servings" type="number" placeholder="Servings" value={servings}
             onChange={(e) => { setServings(e.target.value) }} />
-        </label>
+        
       </div>
-      <div>
-        <button type="submit">Add Student</button>
+      <div><br />
+        <button type="submit">Add Recipe</button>
       </div>
     </form>
+    </div>
 
   );
 };

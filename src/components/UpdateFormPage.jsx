@@ -29,39 +29,35 @@ function UpdateFormPage(props) {
     return (
       <form onSubmit={handleSubmit}>
         <div>
-          <label>
-            Recipe Name
+          <label>Recipe Name</label>
             <input name="recipeName" type="text" placeholder="Name" value={recipeName} required
               onChange={(e) => { setRecipeName(e.target.value) }} />
-          </label>
+          
           <br/>
   
-          <label>
-            Calories
+          <label>Calories </label>
             <input name="calories" type="number" placeholder="Calories" value={calories}
               onChange={(e) => { setCalories(e.target.value) }} />
-          </label>
+         
           <br/>
   
-          <label>
-            Image
+          <label>Image</label>
             <input name="image" type="url" placeholder="Image" value={image} required
               onChange={(e) => { setImage(e.target.value) }} />
-          </label>
+         
           <br/>
   
-          <label>
-            Servings
+          <label>Servings </label>
             <input name="servings" type="number" placeholder="Servings" value={servings}
               onChange={(e) => { setServings(e.target.value) }} />
-          </label>
+         
         </div>
         <br/>
         <div>
-          <button type="submit">Update</button>
+          <span className="formSpan"><button type="submit">Update</button></span>
+          <span><button onClick={() => {props.deleteFunction(props.details.id)}}>Delete</button></span>
         </div>
       </form>
-  
     );
 }
 

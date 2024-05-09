@@ -26,18 +26,19 @@ function DashboardPage() {
   }
 
   return (
-    <div id="content">
+    <div className="content">
       <FormPage callFunction={addRecipe} />
       {recipes.map((recipe) => {
         return (
-          <div key={recipe.id}>
+          <div key={recipe.id} className="recipeBox">
             <Link to={`/details/${recipe.id}`}>
               <div className="recipeContainer" key={recipe.id}>
                 <ListItem card={recipe} />
               </div>
             </Link>
             <div>
-              <UpdateFormPage details={recipe} callFunction={updateRecipe} />
+              <UpdateFormPage details={recipe} callFunction={updateRecipe} deleteFunction={deleteRecipe} />
+              
             </div>
           </div>
         );
